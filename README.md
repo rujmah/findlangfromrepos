@@ -4,6 +4,10 @@ A node commandline app to find the most likely favourite language for a github u
 
 ## Getting started
 
+### Prequisites
+
+ - Node v0.10.x 
+
 ### Installation
 
 ```sh
