@@ -1,5 +1,4 @@
 var GitHubApi = require("github");
-var _und = require("underscore");
 
 var github = new GitHubApi({
     // required
