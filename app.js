@@ -1,3 +1,4 @@
+var _und = require("underscore");
 var GitHubApi = require("github");
 
 var github = new GitHubApi({
@@ -11,7 +12,14 @@ github.repos.getFromUser({
     user: "rujmah"
 }, function(err, res) {
       // console.log(res);
+  var langCount = {};
   for (var i = 0; i < res.length; i++) {
-      console.log(res[i].language);
+    var lang = res[i].language;
+    langCount[lang] = (langCount[lang]===undefined ? 1 : langCount[lang]+1)
+      
+    // console.log(res[i].language + ':' + langCount[lang]);
     };
+    var property_names = Object.getOwnPropertyNames(langCount);
+    property_names = _und.reject(property_names, function(item){ return item === 'null' });
+    console.log(property_names);
 });
